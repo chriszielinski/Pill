@@ -37,7 +37,7 @@ open class PillTextStorage: NSTextStorage {
         return !pills.isEmpty
     }
 
-    override init() {
+    override public init() {
         super.init()
     }
 
