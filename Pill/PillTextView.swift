@@ -200,10 +200,6 @@ extension PillTextView {
             super.typingAttributes = newValue
         }
     }
-
-    override open func raiseBaseline(_ sender: Any?) {
-        super.raiseBaseline(sender)
-    }
 }
 
 // MARK: - Overridden Methods
