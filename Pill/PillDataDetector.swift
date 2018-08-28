@@ -10,6 +10,9 @@ import Cocoa
 
 open class PillDataDetector: NSRegularExpression {
 
+    /// The application's shared pill data detector initialized with the `pillRegex` pattern.
+    public static var shared: PillDataDetector = PillDataDetector()
+    /// The regular expression pattern used by the shared pill data detector.
     public static var pillRegex: String = "<(.*?)>"
 
     override public init(pattern: String, options: NSRegularExpression.Options = []) throws {
@@ -20,19 +23,18 @@ open class PillDataDetector: NSRegularExpression {
         try! self.init(pattern: PillDataDetector.pillRegex)
     }
 
-    @discardableResult
-    convenience public init(mutableAttributedString: NSMutableAttributedString) {
-        self.init()
-        pillify(mutableAttributedString: mutableAttributedString)
-    }
-
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func pillify(mutableAttributedString: NSMutableAttributedString) {
+    static func pillify(string: String) -> NSMutableAttributedString {
+        return shared.pillify(string: string)
+    }
+
+    public func pillify(string: String) -> NSMutableAttributedString {
         var pills: [(NSRange, Pill)] = []
-        let nsString = mutableAttributedString.string as NSString
+        let nsString = string as NSString
+        var mutableAttributedString = NSMutableAttributedString(string: string)
 
         func replace(_ result: NSTextCheckingResult?, _ flags: NSRegularExpression.MatchingFlags, _ shouldStop: UnsafeMutablePointer<ObjCBool>) {
             // Result guaranteed to be non-nil.
@@ -40,11 +42,13 @@ open class PillDataDetector: NSRegularExpression {
                            Pill(with: nsString.substring(with: result!.range(at: 1)))))
         }
 
-        enumerateMatches(in: mutableAttributedString.string,
+        enumerateMatches(in: string,
                          range: mutableAttributedString.contentRange,
                          using: replace)
         pills.reversed().forEach {
             mutableAttributedString.replaceCharacters(in: $0.0, with: $0.1.attributedStringValue)
         }
+
+        return mutableAttributedString
     }
 }

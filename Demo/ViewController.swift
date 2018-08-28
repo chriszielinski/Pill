@@ -21,10 +21,8 @@ class ViewController: NSViewController {
         // Add an inset to the text container.
         pillTextView.textContainerInset = NSSize(width: 5, height: 5)
 
-        // Create the mutable attributed string containing the pills.
-        let mutableAttributedString = NSMutableAttributedString(string: "Hey <Xcode>, check out my <pills💊>!")
-        // Parses the mutable attributed string's pills and sets the result to the text view.
-        pillTextView.pillTextStorage.pillifyAndSetAttributedString(mutableAttributedString)
+        // Parses the string's pills and sets the result to the text view.
+        pillTextView.pillTextStorage.pillifyAndSet(string: "Hey <Xcode>, check out my <pills💊>!")
 
         // Add some paragraph formatting.
         let mutableParagraphStyle = NSMutableParagraphStyle()

@@ -146,13 +146,12 @@ public extension PillTextStorage {
         append(pill.attributedStringValue)
     }
 
-    /// Replaces the receiver’s entire contents with the characters and parsed pills of the given mutable attributed string.
-    /// Uses a `PillDataDetector` to parse pills from `attributedString`.
+    /// Replaces the receiver’s entire contents with the characters and parsed pills of the given string.
+    /// Uses the shared `PillDataDetector` to parse pills from `string`.
     ///
-    /// - Parameter attributedString: The mutable attributed string to parse for pills and set.
-    func pillifyAndSetAttributedString(_ attributedString: NSMutableAttributedString) {
-        PillDataDetector(mutableAttributedString: attributedString)
-        setAttributedString(attributedString)
+    /// - Parameter string: The string to parse for pills and set.
+    func pillifyAndSet(string: String) {
+        setAttributedString(PillDataDetector.pillify(string: string))
     }
 }
 
