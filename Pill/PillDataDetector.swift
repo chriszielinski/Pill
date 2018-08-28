@@ -27,10 +27,18 @@ open class PillDataDetector: NSRegularExpression {
         fatalError("init(coder:) has not been implemented")
     }
 
-    static func pillify(string: String) -> NSMutableAttributedString {
+    /// Parse and replace plaintext pills in a string using the `shared` pill data detector.
+    ///
+    /// - Parameter string: The string to parse pills out of.
+    /// - Returns: Returns a mutable attributed string containing `Pill`s and any remaining original text.
+    public static func pillify(string: String) -> NSMutableAttributedString {
         return shared.pillify(string: string)
     }
 
+    /// Parse and replace plaintext pills in a string.
+    ///
+    /// - Parameter string: The string to parse pills out of.
+    /// - Returns: Returns a mutable attributed string containing `Pill`s and any remaining original text.
     public func pillify(string: String) -> NSMutableAttributedString {
         var pills: [(NSRange, Pill)] = []
         let nsString = string as NSString
