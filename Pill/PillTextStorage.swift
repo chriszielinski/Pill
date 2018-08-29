@@ -244,16 +244,24 @@ public extension PillTextStorage {
         return pillsInRange.isEmpty ? nil : pillsInRange
     }
 
-    /// Returns the "closest" pill to a specified character index (searching towards the end of the string). Optionally, providing a lookbehind length that will begin the search offset backwards by that amount (or the beginning of the string if out of bounds).
+    /// Returns the "closest" pill to a specified character index (searching towards the end of the string). Optionally, providing a lookbehind length that will begin the search offset backwards by that amount (or the beginning of the string if out of bounds). Specifying to loop, will search for the first pill in the entire text view if none exist within the aforementioned range.
     ///
     /// - Parameters:
     ///   - characterIndex: The character index to search from.
     ///   - lookBackLength: The offset to subtract from `characterIndex` before searching. Has a default value of 3.
+    ///   - shouldLoop: Whether the search should cycle back to the beginning of the reciever if no other pills exist to the end of the string.
     /// - Returns: Returns the "closest" pill to a specified character index, or nil if no such pills exist.
-    func closestPill(to characterIndex: Int, lookingBack lookBackLength: Int = 3) -> Pill? {
+    func closestPill(to characterIndex: Int, lookingBack lookBackLength: Int = 3, shouldLoop: Bool = true) -> Pill? {
         let startingIndex = max(0, characterIndex - lookBackLength)
-        let searchRange = NSRange(location: startingIndex, length: length - startingIndex)
-        return firstPill(in: searchRange)
+        let toEndRange = NSRange(location: startingIndex, length: length - startingIndex)
+        let endPill = firstPill(in: toEndRange)
+        // If already found pill OR don't want to loop, return result or nil.
+        if endPill != nil || !shouldLoop {
+            return endPill
+        }
+        // Otherwise, search from the beginning.
+        let fromStartRange = NSRange(location: 0, length: length - toEndRange.length)
+        return firstPill(in: fromStartRange)
     }
 
     /// Returns the next pill after a specified pill. Optionally, cycling back to the very first pill if none exist after the specified pill.
