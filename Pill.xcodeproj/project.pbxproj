@@ -19,6 +19,7 @@
 		1426B54D2133AF8600482239 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436E03F21309933006C347D /* NSAttributedString.swift */; };
 		1426B54E2133AF8600482239 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426B531213371CE00482239 /* NSTextView.swift */; };
 		14370D7821345D0F0051CB33 /* PillDataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14370D7721345B0D0051CB33 /* PillDataDetector.swift */; };
+		14BC7716213704B100204EE3 /* PillStringWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC7715213704B100204EE3 /* PillStringWrapper.swift */; };
 		14BD7CB5212BBBC0007A120A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD7CB4212BBBC0007A120A /* AppDelegate.swift */; };
 		14BD7CB7212BBBC0007A120A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD7CB6212BBBC0007A120A /* ViewController.swift */; };
 		14BD7CB9212BBBC2007A120A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BD7CB8212BBBC2007A120A /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		1436E03F21309933006C347D /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		14370D7721345B0D0051CB33 /* PillDataDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDataDetector.swift; sourceTree = "<group>"; };
 		145512D6212F61F0005CC6A2 /* PillLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLayoutManager.swift; sourceTree = "<group>"; };
+		14BC7715213704B100204EE3 /* PillStringWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillStringWrapper.swift; sourceTree = "<group>"; };
 		14BD7CB1212BBBC0007A120A /* Pill Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BD7CB4212BBBC0007A120A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14BD7CB6212BBBC0007A120A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				1426B53C2133AE7E00482239 /* Pill.h */,
 				142634FE212CFFAE0044A50E /* PillTextView.swift */,
 				1426B533213375B200482239 /* PillTextViewDelegate.swift */,
+				14BC7715213704B100204EE3 /* PillStringWrapper.swift */,
 			);
 			path = Pill;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1426B54D2133AF8600482239 /* NSAttributedString.swift in Sources */,
+				14BC7716213704B100204EE3 /* PillStringWrapper.swift in Sources */,
 				1426B54E2133AF8600482239 /* NSTextView.swift in Sources */,
 				1426B54A2133AEFC00482239 /* PillTextStorage.swift in Sources */,
 				1426B5472133AEFC00482239 /* Pill.swift in Sources */,

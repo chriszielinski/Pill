@@ -153,6 +153,13 @@ public extension PillTextStorage {
     func pillifyAndSet(string: String) {
         setAttributedString(PillDataDetector.pillify(string: string))
     }
+
+    /// Replaces the receiver’s entire contents with the characters and pills of the given pill string wrapper.
+    ///
+    /// - Parameter pillStringWrapper: The pill string wrapper whose 'attributedString' will replace the receiver’s entire contents.
+    func setPillStringWrapper(_ pillStringWrapper: PillStringWrapper) {
+        setAttributedString(pillStringWrapper.attributedString)
+    }
 }
 
 // MARK: - Pill Deletion Methods
