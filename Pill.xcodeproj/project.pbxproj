@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141CEA7C213DBCAC00B83837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CEA7B213DBCAC00B83837 /* AppDelegate.swift */; };
+		141CEA7E213DBCAC00B83837 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CEA7D213DBCAC00B83837 /* ViewController.swift */; };
+		141CEA80213DBCAC00B83837 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CEA7F213DBCAC00B83837 /* Document.swift */; };
+		141CEA82213DBCAD00B83837 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141CEA81213DBCAD00B83837 /* Assets.xcassets */; };
+		141CEA85213DBCAD00B83837 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141CEA83213DBCAD00B83837 /* Main.storyboard */; };
+		141CEA8B213DBDCE00B83837 /* Pill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1426B53A2133AE7E00482239 /* Pill.framework */; };
+		141CEA8C213DBDCE00B83837 /* Pill.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1426B53A2133AE7E00482239 /* Pill.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1426B53E2133AE7E00482239 /* Pill.h in Headers */ = {isa = PBXBuildFile; fileRef = 1426B53C2133AE7E00482239 /* Pill.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1426B5412133AE7E00482239 /* Pill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1426B53A2133AE7E00482239 /* Pill.framework */; };
-		1426B5422133AE7E00482239 /* Pill.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1426B53A2133AE7E00482239 /* Pill.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1426B5472133AEFC00482239 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD7CC4212BBBCD007A120A /* Pill.swift */; };
 		1426B5482133AEFC00482239 /* PillTextAttachmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142634FC212CFF870044A50E /* PillTextAttachmentCell.swift */; };
 		1426B5492133AEFC00482239 /* PillLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145512D6212F61F0005CC6A2 /* PillLayoutManager.swift */; };
@@ -20,30 +25,26 @@
 		1426B54E2133AF8600482239 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426B531213371CE00482239 /* NSTextView.swift */; };
 		14370D7821345D0F0051CB33 /* PillDataDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14370D7721345B0D0051CB33 /* PillDataDetector.swift */; };
 		14BC7716213704B100204EE3 /* PillStringWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC7715213704B100204EE3 /* PillStringWrapper.swift */; };
-		14BD7CB5212BBBC0007A120A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD7CB4212BBBC0007A120A /* AppDelegate.swift */; };
-		14BD7CB7212BBBC0007A120A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD7CB6212BBBC0007A120A /* ViewController.swift */; };
-		14BD7CB9212BBBC2007A120A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BD7CB8212BBBC2007A120A /* Assets.xcassets */; };
-		14BD7CBC212BBBC2007A120A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BD7CBA212BBBC2007A120A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1426B53F2133AE7E00482239 /* PBXContainerItemProxy */ = {
+		141CEA8D213DBDCE00B83837 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14BD7CA9212BBBC0007A120A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1426B5392133AE7E00482239;
-			remoteInfo = TokenTextView;
+			remoteInfo = Pill;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1426B5462133AE7E00482239 /* Embed Frameworks */ = {
+		141CEA8F213DBDCE00B83837 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1426B5422133AE7E00482239 /* Pill.framework in Embed Frameworks */,
+				141CEA8C213DBDCE00B83837 /* Pill.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +52,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		141CEA79213DBCAC00B83837 /* Pill Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		141CEA7B213DBCAC00B83837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		141CEA7D213DBCAC00B83837 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		141CEA7F213DBCAC00B83837 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		141CEA81213DBCAD00B83837 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		141CEA84213DBCAD00B83837 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		141CEA86213DBCAD00B83837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		141CEA87213DBCAD00B83837 /* Pill_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pill_Demo.entitlements; sourceTree = "<group>"; };
 		142634FC212CFF870044A50E /* PillTextAttachmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTextAttachmentCell.swift; sourceTree = "<group>"; };
 		142634FE212CFFAE0044A50E /* PillTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTextView.swift; sourceTree = "<group>"; };
 		14263500212CFFED0044A50E /* PillTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillTextStorage.swift; sourceTree = "<group>"; };
@@ -63,17 +72,18 @@
 		14370D7721345B0D0051CB33 /* PillDataDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDataDetector.swift; sourceTree = "<group>"; };
 		145512D6212F61F0005CC6A2 /* PillLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillLayoutManager.swift; sourceTree = "<group>"; };
 		14BC7715213704B100204EE3 /* PillStringWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillStringWrapper.swift; sourceTree = "<group>"; };
-		14BD7CB1212BBBC0007A120A /* Pill Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pill Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		14BD7CB4212BBBC0007A120A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14BD7CB6212BBBC0007A120A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		14BD7CB8212BBBC2007A120A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14BD7CBB212BBBC2007A120A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		14BD7CBD212BBBC2007A120A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14BD7CBE212BBBC2007A120A /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		14BD7CC4212BBBCD007A120A /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		141CEA76213DBCAC00B83837 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				141CEA8B213DBDCE00B83837 /* Pill.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1426B5362133AE7E00482239 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,17 +91,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14BD7CAE212BBBC0007A120A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1426B5412133AE7E00482239 /* Pill.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141CEA7A213DBCAC00B83837 /* Pill Demo */ = {
+			isa = PBXGroup;
+			children = (
+				141CEA7B213DBCAC00B83837 /* AppDelegate.swift */,
+				141CEA7D213DBCAC00B83837 /* ViewController.swift */,
+				141CEA7F213DBCAC00B83837 /* Document.swift */,
+				141CEA81213DBCAD00B83837 /* Assets.xcassets */,
+				141CEA83213DBCAD00B83837 /* Main.storyboard */,
+				141CEA86213DBCAD00B83837 /* Info.plist */,
+				141CEA87213DBCAD00B83837 /* Pill_Demo.entitlements */,
+			);
+			path = "Pill Demo";
+			sourceTree = "<group>";
+		};
 		1426B53B2133AE7E00482239 /* Pill */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +138,8 @@
 		14BD7CA8212BBBC0007A120A = {
 			isa = PBXGroup;
 			children = (
-				14BD7CB3212BBBC0007A120A /* Demo */,
 				1426B53B2133AE7E00482239 /* Pill */,
+				141CEA7A213DBCAC00B83837 /* Pill Demo */,
 				14BD7CB2212BBBC0007A120A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,23 +147,10 @@
 		14BD7CB2212BBBC0007A120A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14BD7CB1212BBBC0007A120A /* Pill Demo.app */,
 				1426B53A2133AE7E00482239 /* Pill.framework */,
+				141CEA79213DBCAC00B83837 /* Pill Demo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		14BD7CB3212BBBC0007A120A /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				14BD7CB4212BBBC0007A120A /* AppDelegate.swift */,
-				14BD7CB6212BBBC0007A120A /* ViewController.swift */,
-				14BD7CB8212BBBC2007A120A /* Assets.xcassets */,
-				14BD7CBA212BBBC2007A120A /* Main.storyboard */,
-				14BD7CBD212BBBC2007A120A /* Info.plist */,
-				14BD7CBE212BBBC2007A120A /* Demo.entitlements */,
-			);
-			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +167,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		141CEA78213DBCAC00B83837 /* Pill Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 141CEA88213DBCAD00B83837 /* Build configuration list for PBXNativeTarget "Pill Demo" */;
+			buildPhases = (
+				141CEA75213DBCAC00B83837 /* Sources */,
+				141CEA76213DBCAC00B83837 /* Frameworks */,
+				141CEA77213DBCAC00B83837 /* Resources */,
+				141CEA8F213DBDCE00B83837 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				141CEA8E213DBDCE00B83837 /* PBXTargetDependency */,
+			);
+			name = "Pill Demo";
+			productName = "Pill Demo";
+			productReference = 141CEA79213DBCAC00B83837 /* Pill Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		1426B5392133AE7E00482239 /* Pill */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1426B5432133AE7E00482239 /* Build configuration list for PBXNativeTarget "Pill" */;
@@ -182,25 +204,6 @@
 			productReference = 1426B53A2133AE7E00482239 /* Pill.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		14BD7CB0212BBBC0007A120A /* Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 14BD7CC1212BBBC2007A120A /* Build configuration list for PBXNativeTarget "Demo" */;
-			buildPhases = (
-				14BD7CAD212BBBC0007A120A /* Sources */,
-				14BD7CAE212BBBC0007A120A /* Frameworks */,
-				14BD7CAF212BBBC0007A120A /* Resources */,
-				1426B5462133AE7E00482239 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1426B5402133AE7E00482239 /* PBXTargetDependency */,
-			);
-			name = Demo;
-			productName = Token;
-			productReference = 14BD7CB1212BBBC0007A120A /* Pill Demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,10 +214,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Big Z Labs";
 				TargetAttributes = {
-					1426B5392133AE7E00482239 = {
+					141CEA78213DBCAC00B83837 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					14BD7CB0212BBBC0007A120A = {
+					1426B5392133AE7E00482239 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -232,13 +235,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				14BD7CB0212BBBC0007A120A /* Demo */,
 				1426B5392133AE7E00482239 /* Pill */,
+				141CEA78213DBCAC00B83837 /* Pill Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		141CEA77213DBCAC00B83837 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				141CEA82213DBCAD00B83837 /* Assets.xcassets in Resources */,
+				141CEA85213DBCAD00B83837 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1426B5382133AE7E00482239 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,18 +258,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14BD7CAF212BBBC0007A120A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14BD7CB9212BBBC2007A120A /* Assets.xcassets in Resources */,
-				14BD7CBC212BBBC2007A120A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		141CEA75213DBCAC00B83837 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				141CEA7E213DBCAC00B83837 /* ViewController.swift in Sources */,
+				141CEA7C213DBCAC00B83837 /* AppDelegate.swift in Sources */,
+				141CEA80213DBCAC00B83837 /* Document.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1426B5352133AE7E00482239 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,30 +288,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		14BD7CAD212BBBC0007A120A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				14BD7CB7212BBBC0007A120A /* ViewController.swift in Sources */,
-				14BD7CB5212BBBC0007A120A /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1426B5402133AE7E00482239 /* PBXTargetDependency */ = {
+		141CEA8E213DBDCE00B83837 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1426B5392133AE7E00482239 /* Pill */;
-			targetProxy = 1426B53F2133AE7E00482239 /* PBXContainerItemProxy */;
+			targetProxy = 141CEA8D213DBDCE00B83837 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14BD7CBA212BBBC2007A120A /* Main.storyboard */ = {
+		141CEA83213DBCAD00B83837 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14BD7CBB212BBBC2007A120A /* Base */,
+				141CEA84213DBCAD00B83837 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -306,6 +310,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		141CEA89213DBCAD00B83837 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pill Demo/Pill_Demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9V456WSURS;
+				INFOPLIST_FILE = "Pill Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bigzlabs.Pill-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		141CEA8A213DBCAD00B83837 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pill Demo/Pill_Demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9V456WSURS;
+				INFOPLIST_FILE = "Pill Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bigzlabs.Pill-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		1426B5442133AE7E00482239 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,49 +523,18 @@
 			};
 			name = Release;
 		};
-		14BD7CC2212BBBC2007A120A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9V456WSURS;
-				INFOPLIST_FILE = Demo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bigzlabs.Pill-Demo";
-				PRODUCT_NAME = "Pill Demo";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		14BD7CC3212BBBC2007A120A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9V456WSURS;
-				INFOPLIST_FILE = Demo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bigzlabs.Pill-Demo";
-				PRODUCT_NAME = "Pill Demo";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		141CEA88213DBCAD00B83837 /* Build configuration list for PBXNativeTarget "Pill Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				141CEA89213DBCAD00B83837 /* Debug */,
+				141CEA8A213DBCAD00B83837 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1426B5432133AE7E00482239 /* Build configuration list for PBXNativeTarget "Pill" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -536,15 +549,6 @@
 			buildConfigurations = (
 				14BD7CBF212BBBC2007A120A /* Debug */,
 				14BD7CC0212BBBC2007A120A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		14BD7CC1212BBBC2007A120A /* Build configuration list for PBXNativeTarget "Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14BD7CC2212BBBC2007A120A /* Debug */,
-				14BD7CC3212BBBC2007A120A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

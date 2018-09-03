@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Pill
+//  Pill Demo
 //
-//  Created by Chris Zielinski on 8/20/18.
+//  Created by Chris Zielinski on 9/3/18.
 //  Copyright © 2018 Big Z Labs. All rights reserved.
 //
 
@@ -24,8 +24,8 @@ class ViewController: NSViewController {
         // Parses the string's pills and sets the result to the text view.
         pillTextView.pillTextStorage.pillifyAndSet(string: "Hey <Xcode>, check out my <pills💊>!")
         // OR, can create a `PillStringWrapper` and set it to the text view. A `PillStringWrapper` contains both the original string and the pillified attributed string.
-//        let pillStringWrapper = PillStringWrapper(string: "Hey <Xcode>, check out my <pills💊>!")
-//        pillTextView.pillTextStorage.setPillStringWrapper(pillStringWrapper)
+        //        let pillStringWrapper = PillStringWrapper(string: "Hey <Xcode>, check out my <pills💊>!")
+        //        pillTextView.pillTextStorage.setPillStringWrapper(pillStringWrapper)
 
         // Add some paragraph formatting.
         let mutableParagraphStyle = NSMutableParagraphStyle()
@@ -42,3 +42,4 @@ class ViewController: NSViewController {
     }
 
 }
+

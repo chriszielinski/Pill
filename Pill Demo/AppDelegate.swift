@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Pill
+//  Pill Demo
 //
-//  Created by Chris Zielinski on 8/20/18.
+//  Created by Chris Zielinski on 9/3/18.
 //  Copyright © 2018 Big Z Labs. All rights reserved.
 //
 
@@ -11,6 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -18,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
+
 
 }
 
