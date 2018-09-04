@@ -26,8 +26,10 @@ open class PillTextView: NSTextView {
     /// The currently selected (focused) pill in the text view.
     open weak var selectedPill: Pill?
 
-    public var pillTextStorage: PillTextStorage = PillTextStorage()
-    public var pillLayoutManager: PillLayoutManager = PillLayoutManager()
+    /// The strong referenced pill text storage object. Also, accessible from the `textStorage` property. Property initialized with the `PillTextStorage` object returned by `createPillTextStorage()`.
+    public private(set) var pillTextStorage: PillTextStorage!
+    /// The weak referenced pill layout manager object. Also, accessible from the `layoutManager` property. Property initialized with the `PillLayoutManager` object returned by `createPillLayoutManager()`.
+    public private(set) weak var pillLayoutManager: PillLayoutManager!
 
     /// Whether there is a pill that is currently selected (focused).
     public var hasSelectedPill: Bool {
@@ -57,9 +59,25 @@ open class PillTextView: NSTextView {
     }
 
     open func commonInit() {
+        pillLayoutManager = createPillLayoutManager()
+        pillTextStorage = createPillTextStorage()
         textContainer!.replaceLayoutManager(pillLayoutManager)
         layoutManager!.replaceTextStorage(pillTextStorage)
         pillTextViewDelegate = self
+    }
+
+    /// Creates the back-end pill text storage instance used by the front-end pill text view object. The default implementation returns an instance of `PillTextStorage`; however, descendants can override this method and return a subclass of `PillTextStorage`.
+    ///
+    /// - Returns: The `PillTextStorage`, or subclass thereof, object used by the pill text view object.
+    open func createPillTextStorage() -> PillTextStorage {
+        return PillTextStorage()
+    }
+
+    /// Creates the back-end pill layout manager instance used by the front-end pill text view class. The default implementation returns an instance of `PillLayoutManager`; however, descendants can override this method and return a subclass of `PillLayoutManager`.
+    ///
+    /// - Returns: The `PillLayoutManager`, or subclass thereof, object used by the pill text view object.
+    open func createPillLayoutManager() -> PillLayoutManager {
+        return PillLayoutManager()
     }
 }
 
