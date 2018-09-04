@@ -59,9 +59,10 @@ open class PillTextView: NSTextView {
     }
 
     open func commonInit() {
-        pillLayoutManager = createPillLayoutManager()
+        let createdPillLayoutManager = createPillLayoutManager()
+        pillLayoutManager = createdPillLayoutManager
         pillTextStorage = createPillTextStorage()
-        textContainer!.replaceLayoutManager(pillLayoutManager)
+        textContainer!.replaceLayoutManager(createdPillLayoutManager)
         layoutManager!.replaceTextStorage(pillTextStorage)
         pillTextViewDelegate = self
     }
