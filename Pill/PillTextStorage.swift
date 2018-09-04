@@ -10,17 +10,21 @@ import Cocoa
 
 open class PillTextStorage: NSTextStorage {
 
-    /// The backing store of the pill text storage object. Use a `NSTextStorage` instance because it does some additional performance optimizations over `NSMutableAttributedString`.
+    /// The backing store of the pill text storage object. Use a `NSTextStorage` instance because it does some additional performance 
+    /// optimizations over `NSMutableAttributedString`.
+    /// 
     public var store: NSTextStorage = NSTextStorage()
 
     /// Whether the pills (or their metadata) are stale and need to be refreshed before access to `pills`.
+    /// 
     private var arePillsDirty: Bool = true
     /// The pill dictionary cache mapping a pill to its character index within the storage.
+    /// 
     private var cachedPills: [Pill: Int] = [:]
     /// The pill dictionary mapping a pill to its character index within the storage.
-    ///
+    /// 
     /// - Note: Remember a dictionary's order is unpredictable; thus, no presumption of order should be made.
-    ///
+    /// 
     public var pills: [Pill: Int] {
         if arePillsDirty {
             cachedPills.removeAll()
@@ -33,6 +37,7 @@ open class PillTextStorage: NSTextStorage {
         return cachedPills
     }
     /// Whether the receiver contains any pills.
+    /// 
     public var hasPills: Bool {
         return !pills.isEmpty
     }
@@ -95,24 +100,28 @@ extension PillTextStorage {
 // MARK: - Attribute Modification Methods
 
 public extension PillTextStorage {
-    /// Adds an attribute with the given name and value to only the non-pill characters in the reciever.
+    /// Adds an attribute with the given name and value to only the non-pill characters in the receiver.
+    /// 
     func addAttributeExcludingPills(_ name: NSAttributedStringKey, value: Any) {
         addAttribute(name, value: value)
         addAttributeToAllPills(name, value: value)
     }
 
-    /// Removes the named attribute from only the non-pill characters in the reciever.
+    /// Removes the named attribute from only the non-pill characters in the receiver.
+    /// 
     func removeAttributeExcludingPills(_ name: NSAttributedStringKey) {
         removeAttribute(name)
         removeAttributeFromAllPills(name)
     }
 
     /// Adds an attribute with the given name and value only to the pill characters.
+    /// 
     func addAttributeToAllPills(_ name: NSAttributedStringKey, value: Any) {
         pills.keys.forEach { $0.addAttribute(name, value: value) }
     }
 
     /// Removes the named attribute from only the pill characters.
+    /// 
     func removeAttributeFromAllPills(_ name: NSAttributedStringKey) {
         pills.keys.forEach { $0.removeAttribute(name) }
     }
@@ -122,41 +131,41 @@ public extension PillTextStorage {
 
 public extension PillTextStorage {
     /// Replaces the characters and attributes in a given range with the pill.
-    ///
-    /// - Parameters:
-    ///   - range: The range of characters and attributes replaced.
-    ///   - pill: The pill that will replace the characters and attributes in the specified range.
+    /// 
+    /// - Parameters: 
+    ///     - range: The range of characters and attributes replaced.
+    ///     - pill: The pill that will replace the characters and attributes in the specified range.
     func replaceCharacters(in range: NSRange, with pill: Pill) {
         replaceCharacters(in: range, with: pill.attributedStringValue)
     }
 
     /// Inserts the pill into the receiver at the given character index.
-    ///
-    /// - Parameters:
-    ///   - pill: The pill to insert.
-    ///   - characterIndex: The character index at which the pill is inserted.
+    /// 
+    /// - Parameters: 
+    ///     - pill: The pill to insert.
+    ///     - characterIndex: The character index at which the pill is inserted.
     func insertPill(_ pill: Pill, at characterIndex: Int) {
         insert(pill.attributedStringValue, at: characterIndex)
     }
 
     /// Adds the pill to the end of the receiver.
-    ///
+    /// 
     /// - Parameter pill: The pill to append.
     func appendPill(_ pill: Pill) {
         append(pill.attributedStringValue)
     }
 
-    /// Replaces the receiver’s entire contents with the characters and parsed pills of the given string.
-    /// Uses the shared `PillDataDetector` to parse pills from `string`.
-    ///
+    /// Replaces the receiver’s entire contents with the characters and parsed pills of the given string. Uses the shared 
+    /// `PillDataDetector` to parse pills from `string`.
+    /// 
     /// - Parameter string: The string to parse for pills and set.
     func pillifyAndSet(string: String) {
         setAttributedString(PillDataDetector.pillify(string: string))
     }
 
     /// Replaces the receiver’s entire contents with the characters and pills of the given pill string wrapper.
-    ///
-    /// - Parameter pillStringWrapper: The pill string wrapper whose 'attributedString' will replace the receiver’s entire contents.
+    /// 
+    /// - Parameter pillStringWrapper: The pill string wrapper whose ‘attributedString’ will replace the receiver’s entire contents.
     func setPillStringWrapper(_ pillStringWrapper: PillStringWrapper) {
         setAttributedString(pillStringWrapper.attributedString)
     }
@@ -166,9 +175,9 @@ public extension PillTextStorage {
 
 public extension PillTextStorage {
     /// Deletes the specified pill from the receiver.
-    ///
+    /// 
     /// - Note: This method does not support undo/redo operations.
-    ///
+    /// 
     /// - Parameter characterIndex: The character index of the pill to delete from the receiver.
     func deletePill(at characterIndex: Int) {
         deleteCharacters(in: NSRange(location: characterIndex, length: 1))
@@ -179,17 +188,17 @@ public extension PillTextStorage {
 
 public extension PillTextStorage {
     /// Returns the character index of a specified pill.
-    ///
+    /// 
     /// - Parameter pill: The pill.
-    /// - Returns: Returns the character index of `pill`, or nil if it is not in the text.
+    ///  - Returns: Returns the character index of `pill`, or nil if it is not in the text.
     func characterIndex(of pill: Pill) -> Int? {
         return pills[pill]
     }
 
     /// Returns the character range of a specified pill.
-    ///
+    /// 
     /// - Parameter pill: The pill.
-    /// - Returns: Returns the character range of `pill`, or nil if it is not in the text.
+    ///  - Returns: Returns the character range of `pill`, or nil if it is not in the text.
     func characterRange(of pill: Pill) -> NSRange? {
         guard let characterIndex = characterIndex(of: pill)
             else { return nil }
@@ -197,11 +206,12 @@ public extension PillTextStorage {
     }
 
     /// Returns the pill at a range.
-    ///
-    /// - Note: Only returns a non-nil value when the range is the _exact_ location and length of pill, **not** a pill _within_ the range.
-    ///
+    /// 
+    /// - Note: Only returns a non-nil value when the range is the _exact_ location and length of pill, **not** a pill _within_ the 
+    /// range.
+    /// 
     /// - Parameter range: The range of the pill.
-    /// - Returns: The `PillAttachment` perfectly enclosed by `range`, or nil.
+    ///  - Returns: The `PillAttachment` perfectly enclosed by `range`, or nil.
     func pill(at range: NSRange) -> Pill? {
         guard range.length == 1, range.upperBound <= length
             else { return nil }
@@ -209,9 +219,9 @@ public extension PillTextStorage {
     }
 
     /// Returns the pill at a specified character index.
-    ///
+    /// 
     /// - Parameter characterIndex: The character index.
-    /// - Returns: Returns the pill at `characterIndex`, or nil if non-existent.
+    ///  - Returns: Returns the pill at `characterIndex`, or nil if non-existent.
     func pill(at characterIndex: Int) -> Pill? {
         guard characterIndex >= 0 && characterIndex < length
             else { return nil }
@@ -219,9 +229,9 @@ public extension PillTextStorage {
     }
 
     /// Returns the first pill in a specified range.
-    ///
+    /// 
     /// - Parameter characterRange: The character range to search within.
-    /// - Returns: Returns the first pill in `characterRange`, or nil if no such pills exist.
+    ///  - Returns: Returns the first pill in `characterRange`, or nil if no such pills exist.
     func firstPill(in characterRange: NSRange) -> Pill? {
         guard hasPills else { return nil }
 
@@ -236,9 +246,9 @@ public extension PillTextStorage {
     }
 
     /// Returns all the pills in a specified range.
-    ///
+    /// 
     /// - Parameter range: The character range to search within.
-    /// - Returns: Returns all the pills in `range`.
+    ///  - Returns: Returns all the pills in `range`.
     func pills(in range: NSRange) -> [Pill]? {
         guard range.length != 0 else {
             if let pill = pill(at: range.location) {
@@ -251,13 +261,17 @@ public extension PillTextStorage {
         return pillsInRange.isEmpty ? nil : pillsInRange
     }
 
-    /// Returns the "closest" pill to a specified character index (searching towards the end of the string). Optionally, providing a lookbehind length that will begin the search offset backwards by that amount (or the beginning of the string if out of bounds). Specifying to loop, will search for the first pill in the entire text view if none exist within the aforementioned range.
-    ///
-    /// - Parameters:
-    ///   - characterIndex: The character index to search from.
-    ///   - lookBackLength: The offset to subtract from `characterIndex` before searching. Has a default value of 3.
-    ///   - shouldLoop: Whether the search should cycle back to the beginning of the reciever if no other pills exist to the end of the string.
-    /// - Returns: Returns the "closest" pill to a specified character index, or nil if no such pills exist.
+    /// Returns the “closest” pill to a specified character index (searching towards the end of the string). Optionally, providing a 
+    /// look-behind length that will begin the search offset backwards by that amount (or the beginning of the string if out of 
+    /// bounds). Specifying to loop, will search for the first pill in the entire text view if none exist within the aforementioned 
+    /// range.
+    /// 
+    /// - Parameters: 
+    ///     - characterIndex: The character index to search from.
+    ///     - lookBackLength: The offset to subtract from `characterIndex` before searching. Has a default value of 3.
+    ///     - shouldLoop: Whether the search should cycle back to the beginning of the receiver if no other pills exist to the end 
+    ///         of the string.
+    ///  - Returns: Returns the "closest" pill to a specified character index, or nil if no such pills exist.
     func closestPill(to characterIndex: Int, lookingBack lookBackLength: Int = 3, shouldLoop: Bool = true) -> Pill? {
         let startingIndex = max(0, characterIndex - lookBackLength)
         let toEndRange = NSRange(location: startingIndex, length: length - startingIndex)
@@ -271,12 +285,13 @@ public extension PillTextStorage {
         return firstPill(in: fromStartRange)
     }
 
-    /// Returns the next pill after a specified pill. Optionally, cycling back to the very first pill if none exist after the specified pill.
-    ///
-    /// - Parameters:
-    ///   - pill: The point-of-reference pill.
-    ///   - shouldLoop: Whether the search should cycle back to the first pill if no other pills exist to the end of the string.
-    /// - Returns: The next pill after a specified pill, or nil if no other potential pills exist.
+    /// Returns the next pill after a specified pill. Optionally, cycling back to the very first pill if none exist after the 
+    /// specified pill.
+    /// 
+    /// - Parameters: 
+    ///     - pill: The point-of-reference pill.
+    ///     - shouldLoop: Whether the search should cycle back to the first pill if no other pills exist to the end of the string.
+    ///  - Returns: The next pill after a specified pill, or nil if no other potential pills exist.
     func pillFollowing(_ pill: Pill, shouldLoop: Bool = true) -> Pill? {
         guard pills.count > 1, let characterIndex = characterIndex(of: pill) else { return nil }
 
