@@ -27,7 +27,7 @@ open class PillTextView: NSTextView {
     open weak var selectedPill: Pill?
 
     /// The strong referenced pill text storage object. Also, accessible from the `textStorage` property. Property initialized with the `PillTextStorage` object returned by `createPillTextStorage()`.
-    public private(set) var pillTextStorage: PillTextStorage!
+    public var pillTextStorage: PillTextStorage!
     /// The weak referenced pill layout manager object. Also, accessible from the `layoutManager` property. Property initialized with the `PillLayoutManager` object returned by `createPillLayoutManager()`.
     public private(set) weak var pillLayoutManager: PillLayoutManager!
 
